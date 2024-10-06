@@ -3,10 +3,9 @@ import "./App.css"; // Optionally keep this if you want to use custom styles
 
 function App() {
   return (
-    <div>
-      {/* Your components or content go here */}
-      <h1>Social Security Calculator</h1>
-      <p>
+    <div style={{ display: "column" }}>
+      <h1 className="title">Social Security Calculator</h1>
+      <p className="explanation">
         This Social Security calculator helps you find the best time to start
         claiming your benefits. It estimates your total lifetime benefits for
         different claiming ages (62 to 70), considering factors like your Full
