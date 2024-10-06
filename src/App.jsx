@@ -17,15 +17,26 @@ function App() {
         you claim between ages 62 and 70. It factors in early claiming
         penalties, delayed retirement credits, and potential benefit taxation if
         you're still working. When calculating your total lifetime benefits, our
-        default assumptions include: A full retirement age based on your birth
-        year (between 66 and 67 for most people). An average life expectancy of
-        85 years. Annual cost-of-living adjustments of 2.5%. Potential reduction
-        in benefits if claiming before full retirement age while still working.
-        Increase in benefits for delaying claims past full retirement age. The
-        calculator generates a graph showing your cumulative benefits over time,
-        helping you identify the "break-even" point and the age that maximizes
-        your total benefits. You can adjust these assumptions in the "advanced
-        settings" to better match your personal situation.
+        default assumptions include:
+        <ul>
+          <li>
+            A full retirement age based on your birth year (between 66 and 67
+            for most people).
+          </li>
+          <li>An average life expectancy of 85 years.</li>
+          <li>Annual cost-of-living adjustments of 2.5%.</li>
+          <li>
+            Potential reduction in benefits if claiming before full retirement
+            age while still working.
+          </li>
+          <li>
+            Increase in benefits for delaying claims past full retirement age.
+          </li>
+        </ul>
+        The calculator generates a graph showing your cumulative benefits over
+        time, helping you identify the "break-even" point and the age that
+        maximizes your total benefits. You can adjust these assumptions in the
+        "advanced settings" to better match your personal situation.
       </p>
     </div>
   );
