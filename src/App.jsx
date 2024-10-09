@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css"; // Optionally keep this if you want to use custom styles
+import "./App.css";
 import TextField from "@mui/material/TextField";
 
 function App() {
   return (
-    <div style={{ display: "column" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <h1 className="title">Social Security Calculator</h1>
       <p className="explanation">
         Get the most from Social Security. Our tool helps you find the best time
@@ -39,18 +39,18 @@ function App() {
         maximizes your total benefits. You can adjust these assumptions in the
         "advanced settings" to better match your personal situation.
       </p>
-      <div class="input-graph-section">
-        <div class="input-section">
-          <h1 className="input-title">Retirement Details</h1>
+      <div className="input-graph-section">
+        <div className="input-section">
+          <h3 className="input-title">Retirement Details</h3>
           <p className="input-text">Current Age</p>
           <TextField
-            className="input-text"
+            className="input-field"
             variant="outlined"
             type="number"
             inputProps={{ min: 0, max: 120 }}
           />
         </div>
-        <div class="graph-section"></div>
+        <div className="graph-section"></div>
       </div>
     </div>
   );
