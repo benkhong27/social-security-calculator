@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import TextField from "@mui/material/TextField";
 
 function App() {
   return (
@@ -43,12 +42,6 @@ function App() {
         <div className="input-section">
           <h3 className="input-title">Retirement Details</h3>
           <p className="input-text">Current Age</p>
-          <TextField
-            className="input-field"
-            variant="outlined"
-            type="number"
-            inputProps={{ min: 0, max: 120 }}
-          />
         </div>
         <div className="graph-section"></div>
       </div>
