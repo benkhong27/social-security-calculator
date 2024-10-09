@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css"; // Optionally keep this if you want to use custom styles
+import TextField from "@mui/material/TextField";
 
 function App() {
   return (
@@ -38,6 +39,19 @@ function App() {
         maximizes your total benefits. You can adjust these assumptions in the
         "advanced settings" to better match your personal situation.
       </p>
+      <div class="input-graph-section">
+        <div class="input-section">
+          <h1 className="input-title">Retirement Details</h1>
+          <p className="input-text">Current Age</p>
+          <TextField
+            className="input-text"
+            variant="outlined"
+            type="number"
+            inputProps={{ min: 0, max: 120 }}
+          />
+        </div>
+        <div class="graph-section"></div>
+      </div>
     </div>
   );
 }

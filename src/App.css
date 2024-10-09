@@ -16,3 +16,32 @@
   color: #000;
   margin-left: 10%;
 }
+.input-title {
+  font-size: 1.25em;
+  color: #000;
+  margin-left: 10%;
+}
+.input-text {
+  font-size: 1.25em;
+  color: #000;
+  margin-left: 10%;
+}
+
+.input-section {
+  margin-left: 10%;
+  border: solid 1px #000;
+  width: 300px;
+  height: 600px;
+}
+
+.graph-section {
+  margin-left: 10%;
+  border: solid 1px #000;
+  width: 300px;
+  height: 600px;
+}
+
+.input-graph-section {
+  display: flex;
+  flex-direction: row;
+}
