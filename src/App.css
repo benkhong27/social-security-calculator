@@ -34,11 +34,16 @@
   height: 600px;
 }
 
+.input-field {
+  width: 100px;
+  margin-top: 10px;
+}
+
 .graph-section {
-  margin-left: 10%;
   border: solid 1px #000;
-  width: 300px;
+  width: 900px;
   height: 600px;
+  margin-left: 25px;
 }
 
 .input-graph-section {
