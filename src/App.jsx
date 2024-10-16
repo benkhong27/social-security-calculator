@@ -1,5 +1,43 @@
 import React from "react";
 import "./App.css";
+import { TrendingUp } from "lucide-react";
+import {
+  CartesianGrid,
+  Line,
+  LineChart,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const chartData = [
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
+];
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "hsl(var(--chart-1))",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "hsl(var(--chart-2))",
+  },
+};
 
 function App() {
   return (
@@ -43,7 +81,57 @@ function App() {
           <h3 className="input-title">Retirement Details</h3>
           <p className="input-text">Current Age</p>
         </div>
-        <div className="graph-section"></div>
+        <div className="graph-section">
+          <Card>
+            <CardHeader>
+              <CardTitle>Line Chart - Multiple</CardTitle>
+              <CardDescription>January - June 2024</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart
+                  data={chartData}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="month" />
+                  <YAxis />
+                  <Tooltip />
+                  <Line
+                    type="monotone"
+                    dataKey="desktop"
+                    stroke={chartConfig.desktop.color}
+                    name={chartConfig.desktop.label}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="mobile"
+                    stroke={chartConfig.mobile.color}
+                    name={chartConfig.mobile.label}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </CardContent>
+            <CardFooter>
+              <div className="flex w-full items-start gap-2 text-sm">
+                <div className="grid gap-2">
+                  <div className="flex items-center gap-2 font-medium leading-none">
+                    Trending up by 5.2% this month{" "}
+                    <TrendingUp className="h-4 w-4" />
+                  </div>
+                  <div className="flex items-center gap-2 leading-none text-muted-foreground">
+                    Showing total visitors for the last 6 months
+                  </div>
+                </div>
+              </div>
+            </CardFooter>
+          </Card>
+        </div>
       </div>
     </div>
   );
