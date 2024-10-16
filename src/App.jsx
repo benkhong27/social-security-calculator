@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { TrendingUp } from "lucide-react";
 import {
   CartesianGrid,
   Line,
@@ -84,11 +83,11 @@ function App() {
         <div className="graph-section">
           <Card>
             <CardHeader>
-              <CardTitle>Line Chart - Multiple</CardTitle>
-              <CardDescription>January - June 2024</CardDescription>
+              <CardTitle>Retirement Benefits Chart</CardTitle>
+              <CardDescription></CardDescription>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
+              <ResponsiveContainer width="100%" height={576}>
                 <LineChart
                   data={chartData}
                   margin={{
@@ -117,19 +116,6 @@ function App() {
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>
-            <CardFooter>
-              <div className="flex w-full items-start gap-2 text-sm">
-                <div className="grid gap-2">
-                  <div className="flex items-center gap-2 font-medium leading-none">
-                    Trending up by 5.2% this month{" "}
-                    <TrendingUp className="h-4 w-4" />
-                  </div>
-                  <div className="flex items-center gap-2 leading-none text-muted-foreground">
-                    Showing total visitors for the last 6 months
-                  </div>
-                </div>
-              </div>
-            </CardFooter>
           </Card>
         </div>
       </div>
