@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { Input } from "@/components/ui/input";
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
@@ -63,14 +64,14 @@ function App() {
         <div className="w-full md:w-1/3">
           <h3 className="text-xl font-semibold mb-3">Retirement Details</h3>
           <p className="mb-2">Current Age</p>
-          {/* Add input fields here */}
+          <Input type="email" placeholder="Email" />
         </div>
         <div className="w-full md:w-2/3">
           <div className="bg-white shadow-md rounded-lg p-4">
             <h4 className="text-lg font-semibold mb-2">
               Retirement Benefits Chart
             </h4>
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="150%" height={400}>
               <LineChart
                 data={chartData}
                 margin={{
