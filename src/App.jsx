@@ -64,7 +64,7 @@ function App() {
         <div className="w-full md:w-1/3">
           <h3 className="text-xl font-semibold mb-3">Retirement Details</h3>
           <p className="mb-2">Current Age</p>
-          <Input type="email" placeholder="Email" />
+          <Input type="email" placeholder="0" />
         </div>
         <div className="w-full md:w-2/3">
           <div className="bg-white shadow-md rounded-lg p-4">
