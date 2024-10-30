@@ -9,6 +9,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
@@ -41,7 +48,7 @@ function App() {
       <h2 className="text-2xl font-semibold mb-3">How this calculator works</h2>
       <p className="mb-4">
         To estimate your lifetime Social Security benefits ("What you'll
-        receive"), start with your current age and your estimated benefit at
+        receive"), start with your date of birth and your estimated benefit at
         full retirement age. Our calculator shows how your benefits change if
         you claim between ages 62 and 70.
       </p>
@@ -61,17 +68,56 @@ function App() {
         </li>
       </ul>
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/3">
+        <div className="w-full md:w-1/3 space-y-4">
           <h3 className="text-xl font-semibold mb-3">Retirement Details</h3>
-          <p className="mb-2">Current Age</p>
-          <Input type="email" placeholder="0" />
+
+          <div>
+            <p className="mb-2">Date of Birth</p>
+            <Input type="date" className="w-full" />
+          </div>
+
+          <div>
+            <p className="mb-2">Life Expectancy (years)</p>
+            <Input
+              type="number"
+              placeholder="85"
+              min="62"
+              max="120"
+              className="w-full"
+            />
+          </div>
+
+          <div>
+            <p className="mb-2">Annual Income ($)</p>
+            <Input
+              type="number"
+              placeholder="0"
+              min="0"
+              step="1000"
+              className="w-full"
+            />
+          </div>
+
+          <div>
+            <p className="mb-2">Do you need the cash now?</p>
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select an option" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="true">Yes</SelectItem>
+                <SelectItem value="false">No</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
+
         <div className="w-full md:w-2/3">
           <div className="bg-white shadow-md rounded-lg p-4">
             <h4 className="text-lg font-semibold mb-2">
               Retirement Benefits Chart
             </h4>
-            <ResponsiveContainer width="150%" height={400}>
+            <ResponsiveContainer width="100%" height={400}>
               <LineChart
                 data={chartData}
                 margin={{
