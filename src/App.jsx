@@ -112,7 +112,7 @@ function App() {
           </div>
         </div>
 
-        <div className="w-full md:w-2/3">
+        <div className="w-full md:w-4/5">
           <div className="bg-white shadow-md rounded-lg p-4">
             <h4 className="text-lg font-semibold mb-2">
               Retirement Benefits Chart
