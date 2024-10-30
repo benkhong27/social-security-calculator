@@ -39,7 +39,7 @@ const chartConfig = {
 
 function App() {
   return (
-    <div className="flex flex-col p-6 max-w-4xl mx-auto">
+    <div className="flex flex-col p-6 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">Social Security Calculator</h1>
       <p className="text-lg mb-6">
         Get the most from Social Security. Our tool helps you find the best time
@@ -68,7 +68,7 @@ function App() {
         </li>
       </ul>
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/3 space-y-4">
+        <div className="w-full md:w-1/4 space-y-4">
           <h3 className="text-xl font-semibold mb-3">Retirement Details</h3>
 
           <div>
@@ -123,7 +123,7 @@ function App() {
           </div>
         </div>
 
-        <div className="w-full md:w-4/5">
+        <div className="w-full md:w-3/4">
           <div className="bg-white shadow-md rounded-lg p-4">
             <h4 className="text-lg font-semibold mb-2">
               Retirement Benefits Chart
