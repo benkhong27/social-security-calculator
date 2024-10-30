@@ -77,6 +77,17 @@ function App() {
           </div>
 
           <div>
+            <p className="mb-2">Retirement Age</p>
+            <Input
+              type="number"
+              placeholder="67"
+              min="62"
+              max="70"
+              className="w-full"
+            />
+          </div>
+
+          <div>
             <p className="mb-2">Life Expectancy (years)</p>
             <Input
               type="number"
