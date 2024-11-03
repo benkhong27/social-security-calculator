@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   CartesianGrid,
   Line,
@@ -16,7 +16,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
@@ -38,81 +37,7 @@ const chartConfig = {
   },
 };
 
-// Calculate FRA based on birth year
-const calculateFRA = (birthDate) => {
-  if (!birthDate) return 67; // Default FRA
-  const birthYear = new Date(birthDate).getFullYear();
-
-  if (birthYear <= 1937) return 65;
-  if (birthYear >= 1960) return 67;
-
-  // For birth years 1938-1959, FRA increases by 2 months for each year
-  const monthsAfter65 = (birthYear - 1937) * 2;
-  return 65 + monthsAfter65 / 12;
-};
-
 function App() {
-  const [birthDate, setBirthDate] = useState("");
-  const [retirementAge, setRetirementAge] = useState("");
-  const [lifeExpectancy, setLifeExpectancy] = useState("");
-  const [annualIncome, setAnnualIncome] = useState("");
-  const [error, setError] = useState("");
-
-  const handleRetirementAgeChange = (e) => {
-    const value = e.target.value;
-    const fra = calculateFRA(birthDate);
-
-    // Clear previous error
-    setError("");
-
-    // Don't allow negative values or empty string
-    if (value === "" || parseInt(value) < 0) {
-      setRetirementAge("");
-      setError("Retirement age cannot be negative");
-      return;
-    }
-
-    const age = parseInt(value);
-
-    // Validate age is within allowed range (62-70)
-    if (age < 62) {
-      setError("Retirement age cannot be less than 62");
-      setRetirementAge("62");
-    } else if (age > 70) {
-      setError("Retirement age cannot be greater than 70");
-      setRetirementAge("70");
-    } else {
-      setRetirementAge(value);
-    }
-  };
-
-  const handleLifeExpectancyChange = (e) => {
-    const value = e.target.value;
-
-    // Clear previous error
-    setError("");
-
-    // Don't allow negative values or empty string
-    if (value === "" || parseInt(value) < 0) {
-      setLifeExpectancy("");
-      setError("Life expectancy cannot be negative");
-      return;
-    }
-
-    const age = parseInt(value);
-
-    // Validate life expectancy is reasonable
-    if (age < 62) {
-      setError("Life expectancy must be at least 62");
-      setLifeExpectancy("62");
-    } else if (age > 120) {
-      setError("Life expectancy cannot be greater than 120");
-      setLifeExpectancy("120");
-    } else {
-      setLifeExpectancy(value);
-    }
-  };
-
   return (
     <div className="flex flex-col p-6 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">Social Security Calculator</h1>
@@ -120,13 +45,6 @@ function App() {
         Get the most from Social Security. Our tool helps you find the best time
         to claim benefits based on your situation.
       </p>
-
-      {error && (
-        <Alert variant="destructive" className="mb-4">
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
-      )}
-
       <h2 className="text-2xl font-semibold mb-3">How this calculator works</h2>
       <p className="mb-4">
         To estimate your lifetime Social Security benefits ("What you'll
@@ -155,12 +73,7 @@ function App() {
 
           <div>
             <p className="mb-2">Date of Birth</p>
-            <Input
-              type="date"
-              className="w-full"
-              value={birthDate}
-              onChange={(e) => setBirthDate(e.target.value)}
-            />
+            <Input type="date" className="w-full" />
           </div>
 
           <div>
@@ -171,8 +84,6 @@ function App() {
               min="62"
               max="70"
               className="w-full"
-              value={retirementAge}
-              onChange={handleRetirementAgeChange}
             />
           </div>
 
@@ -184,8 +95,6 @@ function App() {
               min="62"
               max="120"
               className="w-full"
-              value={lifeExpectancy}
-              onChange={handleLifeExpectancyChange}
             />
           </div>
 
@@ -197,8 +106,6 @@ function App() {
               min="0"
               step="1000"
               className="w-full"
-              value={annualIncome}
-              onChange={(e) => setAnnualIncome(e.target.value)}
             />
           </div>
 
